@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoClear.png" width="432" height="310"/>
+        <image name="LogoClear.png" width="500" height="500"/>
     </resources>
 </document>
