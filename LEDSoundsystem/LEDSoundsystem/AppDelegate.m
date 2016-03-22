@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
+
 @property (nonatomic, strong) SPTSession *session;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
+
 @end
 
 @implementation AppDelegate
@@ -21,11 +23,7 @@
     
     //Spotify Authorization Logic
     [[SPTAuth defaultInstance] setClientID:@"e3962c9920404df09de0277ad66a44aa"];
-    
-    //****************************************
-    //  NEED TO DEFINE CALLBACK URL
-    //****************************************
-    [[SPTAuth defaultInstance] setRedirectURL:[NSURL URLWithString:@"callback"]];
+    [[SPTAuth defaultInstance] setRedirectURL:[NSURL URLWithString:@"ledsoundsystem-login://callback"]];
     [[SPTAuth defaultInstance] setRequestedScopes:@[SPTAuthStreamingScope]]; //this is where you define the scope of permission requirement
     
     // Construct a login URL and open it
