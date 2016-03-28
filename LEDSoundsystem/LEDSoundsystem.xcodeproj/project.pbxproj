@@ -59,6 +59,7 @@
 		801E5FA61C8A331F00536847 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		801E5FA81C8A332D00536847 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		807C64F01C89FF6B00E116AD /* LogoClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoClear.png; sourceTree = "<group>"; };
+		80EC5D751CA1E6A50095A0D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */,
 				801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */,
 				801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */,
-				801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +93,8 @@
 		800902EE1C88C9F400722614 = {
 			isa = PBXGroup;
 			children = (
-				801E5FA81C8A332D00536847 /* SystemConfiguration.framework */,
-				801E5FA61C8A331F00536847 /* AVFoundation.framework */,
 				800902F91C88C9F400722614 /* LEDSoundsystem */,
+				801E5FA31C8A313300536847 /* Frameworks */,
 				800903131C88C9F500722614 /* LEDSoundsystemTests */,
 				8009031E1C88C9F500722614 /* LEDSoundsystemUITests */,
 				800902F81C88C9F400722614 /* Products */,
@@ -115,15 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				807C64ED1C88DAD300E116AD /* Assets */,
+				80EC5D751CA1E6A50095A0D8 /* Config.h */,
 				800902FD1C88C9F400722614 /* AppDelegate.h */,
 				800902FE1C88C9F400722614 /* AppDelegate.m */,
 				800903001C88C9F400722614 /* ViewController.h */,
 				800903011C88C9F400722614 /* ViewController.m */,
-				801E5FA31C8A313300536847 /* Frameworks */,
 				800903031C88C9F400722614 /* Main.storyboard */,
 				800903061C88C9F400722614 /* Assets.xcassets */,
 				800903081C88C9F500722614 /* LaunchScreen.storyboard */,
-				8009030B1C88C9F500722614 /* Info.plist */,
 				800902FA1C88C9F400722614 /* Supporting Files */,
 			);
 			path = LEDSoundsystem;
@@ -132,6 +131,7 @@
 		800902FA1C88C9F400722614 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8009030B1C88C9F500722614 /* Info.plist */,
 				800902FB1C88C9F400722614 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -158,9 +158,12 @@
 		801E5FA31C8A313300536847 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				801E5FA81C8A332D00536847 /* SystemConfiguration.framework */,
+				801E5FA61C8A331F00536847 /* AVFoundation.framework */,
 				801E5FA41C8A316B00536847 /* Spotify.framework */,
 			);
 			name = Frameworks;
+			path = LEDSoundsystem;
 			sourceTree = "<group>";
 		};
 		807C64ED1C88DAD300E116AD /* Assets */ = {
@@ -452,7 +455,7 @@
 				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -469,7 +472,7 @@
 				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

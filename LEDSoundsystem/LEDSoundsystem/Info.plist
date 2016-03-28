@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.LEDSoundsystem.spotify-auth</string>
+			<string>com.ledsoundsystem.spotify-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>ledsoundsystem-login</string>
