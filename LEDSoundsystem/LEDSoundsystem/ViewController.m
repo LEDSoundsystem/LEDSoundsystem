@@ -35,6 +35,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"did appear!");
 }
 
 -(void)updateUI {
