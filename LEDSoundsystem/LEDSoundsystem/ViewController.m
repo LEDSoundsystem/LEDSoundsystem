@@ -12,7 +12,7 @@
 #import <Spotify/SPTDiskCache.h>
 
 
-@interface ViewController () <SPTAudioStreamingDelegate> 
+@interface ViewController () <SPTAudioStreamingDelegate>
 
 @property (strong, nonatomic) SPTAudioStreamingController *player;
 @property (weak, nonatomic) IBOutlet UILabel *songTitle;
@@ -72,7 +72,7 @@
             return;
         }
         
-        [self updateUI];
+        
         
         NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:cariboutheband:playlist:4Dg0J0ICj9kKTGDyFu0Cv4"] accessToken:auth.session.accessToken error:nil];
         
@@ -84,6 +84,8 @@
             SPTPlaylistSnapshot *playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
             
             [self.player playURIs:playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
+            
+            [self updateUI];
         }];
         
     }];
@@ -95,6 +97,9 @@
 - (IBAction)playMusic:(id)sender {
     NSLog(@"play button pressed...");
     [self handleNewSession];
+}
+- (IBAction)logPress:(id)sender {
+    NSLog(@"buton pressed");
 }
 
 @end

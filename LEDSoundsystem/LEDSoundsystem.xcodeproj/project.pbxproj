@@ -19,6 +19,9 @@
 		801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA61C8A331F00536847 /* AVFoundation.framework */; };
 		801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA81C8A332D00536847 /* SystemConfiguration.framework */; };
 		807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 807C64F01C89FF6B00E116AD /* LogoClear.png */; };
+		80D602441CAA3845003305E3 /* songViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602431CAA3845003305E3 /* songViewController.m */; };
+		80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602461CAB7DD3003305E3 /* playlistTableViewController.m */; };
+		80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FA5F9E1CB31A71008F51F7 /* startViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,13 @@
 		801E5FA61C8A331F00536847 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		801E5FA81C8A332D00536847 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		807C64F01C89FF6B00E116AD /* LogoClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoClear.png; sourceTree = "<group>"; };
+		80D602421CAA3845003305E3 /* songViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songViewController.h; sourceTree = "<group>"; };
+		80D602431CAA3845003305E3 /* songViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songViewController.m; sourceTree = "<group>"; };
+		80D602451CAB7DD3003305E3 /* playlistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playlistTableViewController.h; path = ../playlistTableViewController.h; sourceTree = "<group>"; };
+		80D602461CAB7DD3003305E3 /* playlistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playlistTableViewController.m; path = ../playlistTableViewController.m; sourceTree = "<group>"; };
 		80EC5D751CA1E6A50095A0D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		80FA5F9D1CB31A71008F51F7 /* startViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startViewController.h; sourceTree = "<group>"; };
+		80FA5F9E1CB31A71008F51F7 /* startViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,14 +125,20 @@
 			children = (
 				807C64ED1C88DAD300E116AD /* Assets */,
 				80EC5D751CA1E6A50095A0D8 /* Config.h */,
+				80FA5F9D1CB31A71008F51F7 /* startViewController.h */,
+				80FA5F9E1CB31A71008F51F7 /* startViewController.m */,
 				800902FD1C88C9F400722614 /* AppDelegate.h */,
 				800902FE1C88C9F400722614 /* AppDelegate.m */,
 				800903001C88C9F400722614 /* ViewController.h */,
 				800903011C88C9F400722614 /* ViewController.m */,
+				80D602451CAB7DD3003305E3 /* playlistTableViewController.h */,
+				80D602461CAB7DD3003305E3 /* playlistTableViewController.m */,
 				800903031C88C9F400722614 /* Main.storyboard */,
 				800903061C88C9F400722614 /* Assets.xcassets */,
 				800903081C88C9F500722614 /* LaunchScreen.storyboard */,
 				800902FA1C88C9F400722614 /* Supporting Files */,
+				80D602421CAA3845003305E3 /* songViewController.h */,
+				80D602431CAA3845003305E3 /* songViewController.m */,
 			);
 			path = LEDSoundsystem;
 			sourceTree = "<group>";
@@ -308,6 +323,9 @@
 				800903021C88C9F400722614 /* ViewController.m in Sources */,
 				800902FF1C88C9F400722614 /* AppDelegate.m in Sources */,
 				800902FC1C88C9F400722614 /* main.m in Sources */,
+				80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */,
+				80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */,
+				80D602441CAA3845003305E3 /* songViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
