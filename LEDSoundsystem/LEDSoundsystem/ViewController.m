@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import <Spotify/Spotify.h>
 #import <Spotify/SPTDiskCache.h>
+#import "AFHTTPSessionManager.h"
+
 
 
 @interface ViewController () <SPTAudioStreamingDelegate>
@@ -84,6 +86,23 @@
             SPTPlaylistSnapshot *playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
             
             [self.player playURIs:playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
+            
+            SPTPartialTrack *track = playlistSnapshot.firstTrackPage.items[0];
+            NSString *requestURL = [NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", track.identifier];
+            
+            NSString *authorizationString = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
+            NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+            [params setValue:authorizationString forKey:@"Authorization"];
+            
+            [[Global networkManager] GET:requestURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSLog(@"GET request for song info succeeded. Track info for %@: %@", track.name, responseObject);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSLog(@"failed to get track info. error: %@", error);
+            }];
+            
+            NSLog(@"[viewController handleNewSession] track.identifier = %@", track.identifier);
+            
+            
             
             [self updateUI];
         }];

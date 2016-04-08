@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Spotify/Spotify.h>
+#import "AFHTTPSessionManager.h"
+#import "Global.h"
+
 
 @interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
+
+
 
 @end
 
