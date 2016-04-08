@@ -1,589 +1,1421 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		800902FC1C88C9F400722614 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FB1C88C9F400722614 /* main.m */; };
-		800902FF1C88C9F400722614 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FE1C88C9F400722614 /* AppDelegate.m */; };
-		800903021C88C9F400722614 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800903011C88C9F400722614 /* ViewController.m */; };
-		800903051C88C9F400722614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800903031C88C9F400722614 /* Main.storyboard */; };
-		800903071C88C9F400722614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800903061C88C9F400722614 /* Assets.xcassets */; };
-		8009030A1C88C9F500722614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800903081C88C9F500722614 /* LaunchScreen.storyboard */; };
-		800903151C88C9F500722614 /* LEDSoundsystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 800903141C88C9F500722614 /* LEDSoundsystemTests.m */; };
-		800903201C88C9F500722614 /* LEDSoundsystemUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8009031F1C88C9F500722614 /* LEDSoundsystemUITests.m */; };
-		801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA41C8A316B00536847 /* Spotify.framework */; };
-		801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA61C8A331F00536847 /* AVFoundation.framework */; };
-		801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA81C8A332D00536847 /* SystemConfiguration.framework */; };
-		807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 807C64F01C89FF6B00E116AD /* LogoClear.png */; };
-		80D602441CAA3845003305E3 /* songViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602431CAA3845003305E3 /* songViewController.m */; };
-		80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602461CAB7DD3003305E3 /* playlistTableViewController.m */; };
-		80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FA5F9E1CB31A71008F51F7 /* startViewController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		800903111C88C9F500722614 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 800902EF1C88C9F400722614 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 800902F61C88C9F400722614;
-			remoteInfo = LEDSoundsystem;
-		};
-		8009031C1C88C9F500722614 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 800902EF1C88C9F400722614 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 800902F61C88C9F400722614;
-			remoteInfo = LEDSoundsystem;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		800902F71C88C9F400722614 /* LEDSoundsystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDSoundsystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		800902FB1C88C9F400722614 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		800902FD1C88C9F400722614 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		800902FE1C88C9F400722614 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		800903001C88C9F400722614 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		800903011C88C9F400722614 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		800903041C88C9F400722614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		800903061C88C9F400722614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		800903091C88C9F500722614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8009030B1C88C9F500722614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		800903101C88C9F500722614 /* LEDSoundsystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDSoundsystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		800903141C88C9F500722614 /* LEDSoundsystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEDSoundsystemTests.m; sourceTree = "<group>"; };
-		800903161C88C9F500722614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDSoundsystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8009031F1C88C9F500722614 /* LEDSoundsystemUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEDSoundsystemUITests.m; sourceTree = "<group>"; };
-		800903211C88C9F500722614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		801E5FA41C8A316B00536847 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		801E5FA61C8A331F00536847 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		801E5FA81C8A332D00536847 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		807C64F01C89FF6B00E116AD /* LogoClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoClear.png; sourceTree = "<group>"; };
-		80D602421CAA3845003305E3 /* songViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songViewController.h; sourceTree = "<group>"; };
-		80D602431CAA3845003305E3 /* songViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songViewController.m; sourceTree = "<group>"; };
-		80D602451CAB7DD3003305E3 /* playlistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playlistTableViewController.h; path = ../playlistTableViewController.h; sourceTree = "<group>"; };
-		80D602461CAB7DD3003305E3 /* playlistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playlistTableViewController.m; path = ../playlistTableViewController.m; sourceTree = "<group>"; };
-		80EC5D751CA1E6A50095A0D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		80FA5F9D1CB31A71008F51F7 /* startViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startViewController.h; sourceTree = "<group>"; };
-		80FA5F9E1CB31A71008F51F7 /* startViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startViewController.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		800902F41C88C9F400722614 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */,
-				801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */,
-				801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8009030D1C88C9F500722614 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		800903181C88C9F500722614 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		800902EE1C88C9F400722614 = {
-			isa = PBXGroup;
-			children = (
-				800902F91C88C9F400722614 /* LEDSoundsystem */,
-				801E5FA31C8A313300536847 /* Frameworks */,
-				800903131C88C9F500722614 /* LEDSoundsystemTests */,
-				8009031E1C88C9F500722614 /* LEDSoundsystemUITests */,
-				800902F81C88C9F400722614 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		800902F81C88C9F400722614 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				800902F71C88C9F400722614 /* LEDSoundsystem.app */,
-				800903101C88C9F500722614 /* LEDSoundsystemTests.xctest */,
-				8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		800902F91C88C9F400722614 /* LEDSoundsystem */ = {
-			isa = PBXGroup;
-			children = (
-				807C64ED1C88DAD300E116AD /* Assets */,
-				80EC5D751CA1E6A50095A0D8 /* Config.h */,
-				80FA5F9D1CB31A71008F51F7 /* startViewController.h */,
-				80FA5F9E1CB31A71008F51F7 /* startViewController.m */,
-				800902FD1C88C9F400722614 /* AppDelegate.h */,
-				800902FE1C88C9F400722614 /* AppDelegate.m */,
-				800903001C88C9F400722614 /* ViewController.h */,
-				800903011C88C9F400722614 /* ViewController.m */,
-				80D602451CAB7DD3003305E3 /* playlistTableViewController.h */,
-				80D602461CAB7DD3003305E3 /* playlistTableViewController.m */,
-				800903031C88C9F400722614 /* Main.storyboard */,
-				800903061C88C9F400722614 /* Assets.xcassets */,
-				800903081C88C9F500722614 /* LaunchScreen.storyboard */,
-				800902FA1C88C9F400722614 /* Supporting Files */,
-				80D602421CAA3845003305E3 /* songViewController.h */,
-				80D602431CAA3845003305E3 /* songViewController.m */,
-			);
-			path = LEDSoundsystem;
-			sourceTree = "<group>";
-		};
-		800902FA1C88C9F400722614 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8009030B1C88C9F500722614 /* Info.plist */,
-				800902FB1C88C9F400722614 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		800903131C88C9F500722614 /* LEDSoundsystemTests */ = {
-			isa = PBXGroup;
-			children = (
-				800903141C88C9F500722614 /* LEDSoundsystemTests.m */,
-				800903161C88C9F500722614 /* Info.plist */,
-			);
-			path = LEDSoundsystemTests;
-			sourceTree = "<group>";
-		};
-		8009031E1C88C9F500722614 /* LEDSoundsystemUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8009031F1C88C9F500722614 /* LEDSoundsystemUITests.m */,
-				800903211C88C9F500722614 /* Info.plist */,
-			);
-			path = LEDSoundsystemUITests;
-			sourceTree = "<group>";
-		};
-		801E5FA31C8A313300536847 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				801E5FA81C8A332D00536847 /* SystemConfiguration.framework */,
-				801E5FA61C8A331F00536847 /* AVFoundation.framework */,
-				801E5FA41C8A316B00536847 /* Spotify.framework */,
-			);
-			name = Frameworks;
-			path = LEDSoundsystem;
-			sourceTree = "<group>";
-		};
-		807C64ED1C88DAD300E116AD /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				807C64F01C89FF6B00E116AD /* LogoClear.png */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		800902F61C88C9F400722614 /* LEDSoundsystem */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 800903241C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystem" */;
-			buildPhases = (
-				800902F31C88C9F400722614 /* Sources */,
-				800902F41C88C9F400722614 /* Frameworks */,
-				800902F51C88C9F400722614 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LEDSoundsystem;
-			productName = LEDSoundsystem;
-			productReference = 800902F71C88C9F400722614 /* LEDSoundsystem.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8009030F1C88C9F500722614 /* LEDSoundsystemTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 800903271C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystemTests" */;
-			buildPhases = (
-				8009030C1C88C9F500722614 /* Sources */,
-				8009030D1C88C9F500722614 /* Frameworks */,
-				8009030E1C88C9F500722614 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				800903121C88C9F500722614 /* PBXTargetDependency */,
-			);
-			name = LEDSoundsystemTests;
-			productName = LEDSoundsystemTests;
-			productReference = 800903101C88C9F500722614 /* LEDSoundsystemTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8009031A1C88C9F500722614 /* LEDSoundsystemUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8009032A1C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystemUITests" */;
-			buildPhases = (
-				800903171C88C9F500722614 /* Sources */,
-				800903181C88C9F500722614 /* Frameworks */,
-				800903191C88C9F500722614 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8009031D1C88C9F500722614 /* PBXTargetDependency */,
-			);
-			name = LEDSoundsystemUITests;
-			productName = LEDSoundsystemUITests;
-			productReference = 8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		800902EF1C88C9F400722614 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "EECS 700 Group";
-				TargetAttributes = {
-					800902F61C88C9F400722614 = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					8009030F1C88C9F500722614 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 800902F61C88C9F400722614;
-					};
-					8009031A1C88C9F500722614 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 800902F61C88C9F400722614;
-					};
-				};
-			};
-			buildConfigurationList = 800902F21C88C9F400722614 /* Build configuration list for PBXProject "LEDSoundsystem" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 800902EE1C88C9F400722614;
-			productRefGroup = 800902F81C88C9F400722614 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				800902F61C88C9F400722614 /* LEDSoundsystem */,
-				8009030F1C88C9F500722614 /* LEDSoundsystemTests */,
-				8009031A1C88C9F500722614 /* LEDSoundsystemUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		800902F51C88C9F400722614 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */,
-				8009030A1C88C9F500722614 /* LaunchScreen.storyboard in Resources */,
-				800903071C88C9F400722614 /* Assets.xcassets in Resources */,
-				800903051C88C9F400722614 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8009030E1C88C9F500722614 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		800903191C88C9F500722614 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		800902F31C88C9F400722614 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				800903021C88C9F400722614 /* ViewController.m in Sources */,
-				800902FF1C88C9F400722614 /* AppDelegate.m in Sources */,
-				800902FC1C88C9F400722614 /* main.m in Sources */,
-				80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */,
-				80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */,
-				80D602441CAA3845003305E3 /* songViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8009030C1C88C9F500722614 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				800903151C88C9F500722614 /* LEDSoundsystemTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		800903171C88C9F500722614 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				800903201C88C9F500722614 /* LEDSoundsystemUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		800903121C88C9F500722614 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 800902F61C88C9F400722614 /* LEDSoundsystem */;
-			targetProxy = 800903111C88C9F500722614 /* PBXContainerItemProxy */;
-		};
-		8009031D1C88C9F500722614 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 800902F61C88C9F400722614 /* LEDSoundsystem */;
-			targetProxy = 8009031C1C88C9F500722614 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		800903031C88C9F400722614 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				800903041C88C9F400722614 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		800903081C88C9F500722614 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				800903091C88C9F500722614 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		800903221C88C9F500722614 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		800903231C88C9F500722614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		800903251C88C9F500722614 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LEDSoundsystem",
-				);
-				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		800903261C88C9F500722614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LEDSoundsystem",
-				);
-				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		800903281C88C9F500722614 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LEDSoundsystemTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystemTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDSoundsystem.app/LEDSoundsystem";
-			};
-			name = Debug;
-		};
-		800903291C88C9F500722614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LEDSoundsystemTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystemTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDSoundsystem.app/LEDSoundsystem";
-			};
-			name = Release;
-		};
-		8009032B1C88C9F500722614 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LEDSoundsystemUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystemUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LEDSoundsystem;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		8009032C1C88C9F500722614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LEDSoundsystemUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.LEDSoundsystemUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LEDSoundsystem;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		800902F21C88C9F400722614 /* Build configuration list for PBXProject "LEDSoundsystem" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				800903221C88C9F500722614 /* Debug */,
-				800903231C88C9F500722614 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		800903241C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystem" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				800903251C88C9F500722614 /* Debug */,
-				800903261C88C9F500722614 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		800903271C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystemTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				800903281C88C9F500722614 /* Debug */,
-				800903291C88C9F500722614 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8009032A1C88C9F500722614 /* Build configuration list for PBXNativeTarget "LEDSoundsystemUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8009032B1C88C9F500722614 /* Debug */,
-				8009032C1C88C9F500722614 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 800902EF1C88C9F400722614 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>361D1AE9175E7997EF058B9E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-LEDSoundsystem/Pods-LEDSoundsystem-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>800902EE1C88C9F400722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>800902F91C88C9F400722614</string>
+				<string>801E5FA31C8A313300536847</string>
+				<string>800903131C88C9F500722614</string>
+				<string>8009031E1C88C9F500722614</string>
+				<string>800902F81C88C9F400722614</string>
+				<string>84966FDF698218B3777AD224</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902EF1C88C9F400722614</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0720</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>EECS 700 Group</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>800902F61C88C9F400722614</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+					</dict>
+					<key>8009030F1C88C9F500722614</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+						<key>TestTargetID</key>
+						<string>800902F61C88C9F400722614</string>
+					</dict>
+					<key>8009031A1C88C9F500722614</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+						<key>TestTargetID</key>
+						<string>800902F61C88C9F400722614</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>800902F21C88C9F400722614</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>800902EE1C88C9F400722614</string>
+			<key>productRefGroup</key>
+			<string>800902F81C88C9F400722614</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>800902F61C88C9F400722614</string>
+				<string>8009030F1C88C9F500722614</string>
+				<string>8009031A1C88C9F500722614</string>
+			</array>
+		</dict>
+		<key>800902F21C88C9F400722614</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>800903221C88C9F500722614</string>
+				<string>800903231C88C9F500722614</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>800902F31C88C9F400722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>800903021C88C9F400722614</string>
+				<string>800902FF1C88C9F400722614</string>
+				<string>800902FC1C88C9F400722614</string>
+				<string>80FA5F9F1CB31A71008F51F7</string>
+				<string>80D602471CAB7DD3003305E3</string>
+				<string>80D602441CAA3845003305E3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>800902F41C88C9F400722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>801E5FA51C8A316B00536847</string>
+				<string>801E5FA91C8A332D00536847</string>
+				<string>801E5FA71C8A332000536847</string>
+				<string>A01D8A81F13D8D9DDE6221EB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>800902F51C88C9F400722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>807C64F11C89FF6B00E116AD</string>
+				<string>8009030A1C88C9F500722614</string>
+				<string>800903071C88C9F400722614</string>
+				<string>800903051C88C9F400722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>800902F61C88C9F400722614</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>800903241C88C9F500722614</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E8469215286D0509A81D0217</string>
+				<string>800902F31C88C9F400722614</string>
+				<string>800902F41C88C9F400722614</string>
+				<string>800902F51C88C9F400722614</string>
+				<string>AD5D373582899252285F0251</string>
+				<string>361D1AE9175E7997EF058B9E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>LEDSoundsystem</string>
+			<key>productName</key>
+			<string>LEDSoundsystem</string>
+			<key>productReference</key>
+			<string>800902F71C88C9F400722614</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>800902F71C88C9F400722614</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>LEDSoundsystem.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>800902F81C88C9F400722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>800902F71C88C9F400722614</string>
+				<string>800903101C88C9F500722614</string>
+				<string>8009031B1C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902F91C88C9F400722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>807C64ED1C88DAD300E116AD</string>
+				<string>80EC5D751CA1E6A50095A0D8</string>
+				<string>80FA5F9D1CB31A71008F51F7</string>
+				<string>80FA5F9E1CB31A71008F51F7</string>
+				<string>800902FD1C88C9F400722614</string>
+				<string>800902FE1C88C9F400722614</string>
+				<string>800903001C88C9F400722614</string>
+				<string>800903011C88C9F400722614</string>
+				<string>80D602451CAB7DD3003305E3</string>
+				<string>80D602461CAB7DD3003305E3</string>
+				<string>800903031C88C9F400722614</string>
+				<string>800903061C88C9F400722614</string>
+				<string>800903081C88C9F500722614</string>
+				<string>800902FA1C88C9F400722614</string>
+				<string>80D602421CAA3845003305E3</string>
+				<string>80D602431CAA3845003305E3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LEDSoundsystem</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902FA1C88C9F400722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8009030B1C88C9F500722614</string>
+				<string>800902FB1C88C9F400722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902FB1C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902FC1C88C9F400722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800902FB1C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800902FD1C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902FE1C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800902FF1C88C9F400722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800902FE1C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903001C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903011C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903021C88C9F400722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800903011C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903031C88C9F400722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>800903041C88C9F400722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903041C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903051C88C9F400722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800903031C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903061C88C9F400722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903071C88C9F400722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800903061C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903081C88C9F500722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>800903091C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903091C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8009030A1C88C9F500722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800903081C88C9F500722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8009030B1C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8009030C1C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>800903151C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8009030D1C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8009030E1C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8009030F1C88C9F500722614</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>800903271C88C9F500722614</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8009030C1C88C9F500722614</string>
+				<string>8009030D1C88C9F500722614</string>
+				<string>8009030E1C88C9F500722614</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>800903121C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>LEDSoundsystemTests</string>
+			<key>productName</key>
+			<string>LEDSoundsystemTests</string>
+			<key>productReference</key>
+			<string>800903101C88C9F500722614</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>800903101C88C9F500722614</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>LEDSoundsystemTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>800903111C88C9F500722614</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>800902EF1C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>800902F61C88C9F400722614</string>
+			<key>remoteInfo</key>
+			<string>LEDSoundsystem</string>
+		</dict>
+		<key>800903121C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>800902F61C88C9F400722614</string>
+			<key>targetProxy</key>
+			<string>800903111C88C9F500722614</string>
+		</dict>
+		<key>800903131C88C9F500722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>800903141C88C9F500722614</string>
+				<string>800903161C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LEDSoundsystemTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903141C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>LEDSoundsystemTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903151C88C9F500722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>800903141C88C9F500722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903161C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903171C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>800903201C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>800903181C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>800903191C88C9F500722614</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8009031A1C88C9F500722614</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>8009032A1C88C9F500722614</string>
+			<key>buildPhases</key>
+			<array>
+				<string>800903171C88C9F500722614</string>
+				<string>800903181C88C9F500722614</string>
+				<string>800903191C88C9F500722614</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8009031D1C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>LEDSoundsystemUITests</string>
+			<key>productName</key>
+			<string>LEDSoundsystemUITests</string>
+			<key>productReference</key>
+			<string>8009031B1C88C9F500722614</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>8009031B1C88C9F500722614</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>LEDSoundsystemUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8009031C1C88C9F500722614</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>800902EF1C88C9F400722614</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>800902F61C88C9F400722614</string>
+			<key>remoteInfo</key>
+			<string>LEDSoundsystem</string>
+		</dict>
+		<key>8009031D1C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>800902F61C88C9F400722614</string>
+			<key>targetProxy</key>
+			<string>8009031C1C88C9F500722614</string>
+		</dict>
+		<key>8009031E1C88C9F500722614</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8009031F1C88C9F500722614</string>
+				<string>800903211C88C9F500722614</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LEDSoundsystemUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8009031F1C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>LEDSoundsystemUITests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903201C88C9F500722614</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8009031F1C88C9F500722614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>800903211C88C9F500722614</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800903221C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>800903231C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>800903241C88C9F500722614</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>800903251C88C9F500722614</string>
+				<string>800903261C88C9F500722614</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>800903251C88C9F500722614</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>EC89E8BA84AA3C6E3E65C4B9</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/LEDSoundsystem</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystem/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>-ObjC</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.ledsoundsystem</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>800903261C88C9F500722614</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9C08FAF56B2338B849D6E498</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/LEDSoundsystem</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystem/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>-ObjC</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.ledsoundsystem</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>800903271C88C9F500722614</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>800903281C88C9F500722614</string>
+				<string>800903291C88C9F500722614</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>800903281C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystemTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.LEDSoundsystemTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/LEDSoundsystem.app/LEDSoundsystem</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>800903291C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystemTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.LEDSoundsystemTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/LEDSoundsystem.app/LEDSoundsystem</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8009032A1C88C9F500722614</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8009032B1C88C9F500722614</string>
+				<string>8009032C1C88C9F500722614</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8009032B1C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystemUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.LEDSoundsystemUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>LEDSoundsystem</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>8009032C1C88C9F500722614</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>LEDSoundsystemUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.colejurden.LEDSoundsystemUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>LEDSoundsystem</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>801E5FA31C8A313300536847</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>801E5FA81C8A332D00536847</string>
+				<string>801E5FA61C8A331F00536847</string>
+				<string>801E5FA41C8A316B00536847</string>
+				<string>E2563902D92A43A962E57D18</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>path</key>
+			<string>LEDSoundsystem</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>801E5FA41C8A316B00536847</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>Spotify.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>801E5FA51C8A316B00536847</key>
+		<dict>
+			<key>fileRef</key>
+			<string>801E5FA41C8A316B00536847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>801E5FA61C8A331F00536847</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>AVFoundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/AVFoundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>801E5FA71C8A332000536847</key>
+		<dict>
+			<key>fileRef</key>
+			<string>801E5FA61C8A331F00536847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>801E5FA81C8A332D00536847</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SystemConfiguration.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/SystemConfiguration.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>801E5FA91C8A332D00536847</key>
+		<dict>
+			<key>fileRef</key>
+			<string>801E5FA81C8A332D00536847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>807C64ED1C88DAD300E116AD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>807C64F01C89FF6B00E116AD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Assets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>807C64F01C89FF6B00E116AD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>LogoClear.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>807C64F11C89FF6B00E116AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>807C64F01C89FF6B00E116AD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>80D602421CAA3845003305E3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>songViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80D602431CAA3845003305E3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>songViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80D602441CAA3845003305E3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>80D602431CAA3845003305E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>80D602451CAB7DD3003305E3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>playlistTableViewController.h</string>
+			<key>path</key>
+			<string>../playlistTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80D602461CAB7DD3003305E3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>playlistTableViewController.m</string>
+			<key>path</key>
+			<string>../playlistTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80D602471CAB7DD3003305E3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>80D602461CAB7DD3003305E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>80EC5D751CA1E6A50095A0D8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Config.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80FA5F9D1CB31A71008F51F7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>startViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80FA5F9E1CB31A71008F51F7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>startViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80FA5F9F1CB31A71008F51F7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>80FA5F9E1CB31A71008F51F7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>84966FDF698218B3777AD224</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EC89E8BA84AA3C6E3E65C4B9</string>
+				<string>9C08FAF56B2338B849D6E498</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9C08FAF56B2338B849D6E498</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-LEDSoundsystem.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-LEDSoundsystem/Pods-LEDSoundsystem.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A01D8A81F13D8D9DDE6221EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E2563902D92A43A962E57D18</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AD5D373582899252285F0251</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-LEDSoundsystem/Pods-LEDSoundsystem-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E2563902D92A43A962E57D18</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-LEDSoundsystem.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E8469215286D0509A81D0217</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>EC89E8BA84AA3C6E3E65C4B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-LEDSoundsystem.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-LEDSoundsystem/Pods-LEDSoundsystem.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>800902EF1C88C9F400722614</string>
+</dict>
+</plist>
