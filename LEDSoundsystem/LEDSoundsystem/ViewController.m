@@ -103,6 +103,8 @@
              * This could also be a paramter of your method */
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", track.identifier]]];
             
+            //TO DO - MAKE A URL REQUEST FOR SONG DATA WITH EACH SONG CHANGE 
+            
             // Create a mutable copy of the immutable request and add more headers
             NSMutableURLRequest *mutableRequest = [request mutableCopy];
             [mutableRequest addValue:authToken forHTTPHeaderField:@"Authorization"];
@@ -119,7 +121,7 @@
                 NSLog(@"Fucked, didn't work");
             }
             else {
-                NSLog(@"Not fucked, it worked");
+                NSLog(@"Not fucked, it worked: %@", _responseData);
             }
             
             [self updateUI];
