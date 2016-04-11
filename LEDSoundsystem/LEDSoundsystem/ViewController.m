@@ -44,9 +44,15 @@
 -(void)updateUI {
     SPTAuth *auth = [SPTAuth defaultInstance];
     
-    if(self.player.currentTrackURI == nil) {
-        self.songTitle.text = @"Nothing Playing";
+    NSDictionary *trackMetaData = [self.player currentTrackMetadata];
+    
+    
+    if(trackMetaData != nil) {
+        self.songTitle.text = [trackMetaData objectForKey:SPTAudioStreamingMetadataTrackName];
         return;
+    }
+    else{
+        self.songTitle.text = @"Nothing Playing";
     }
     
     [self.spinner startAnimating];
@@ -75,7 +81,6 @@
             return;
         }
         
-        
         NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:cariboutheband:playlist:4Dg0J0ICj9kKTGDyFu0Cv4"] accessToken:auth.session.accessToken error:nil];
         
         [[SPTRequest sharedHandler] performRequest:playlistReq callback:^(NSError *error, NSURLResponse *response, NSData *data) {
@@ -85,6 +90,7 @@
             }
             
             NSLog(@"Playlist request success");
+            
             SPTPlaylistSnapshot *playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
             
             [self.player playURIs:playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
@@ -160,11 +166,32 @@
 }
 
 - (IBAction)playMusic:(id)sender {
-    NSLog(@"play button pressed...");
+    NSLog(@"Play button pressed.");
     [self handleNewSession];
+    [self updateUI];
 }
 - (IBAction)logPress:(id)sender {
     NSLog(@"buton pressed");
+}
+
+-(IBAction)pauseMusic:(id)sender {
+    NSLog(@"Pause Button pressed.");
+    if([self.player isPlaying]){
+        NSLog(@"Pausing Current Song");
+        
+        [self.player setIsPlaying: NO callback:^(NSError *error) {
+            NSLog(@"Error pausing the song: error: %@",error);
+        }];
+    }
+}
+
+-(IBAction)resumeMusic:(id)sender {
+    if(![self.player isPlaying]){
+        NSLog(@"Resuming Music");
+        [self.player setIsPlaying:YES callback:^(NSError *error) {
+            NSLog(@"Unable to resume song. error: %@",error);
+        }];
+    }
 }
 
 @end

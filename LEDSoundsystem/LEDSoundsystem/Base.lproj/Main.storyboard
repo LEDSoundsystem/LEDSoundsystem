@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdt-sR-3mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-544" y="260"/>
+            <point key="canvasLocation" x="-534" y="276"/>
         </scene>
         <!--Playlist Table View Controller-->
         <scene sceneID="7pj-zj-nOz">
@@ -75,24 +75,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-Z2-muD">
-                                <rect key="frame" x="192" y="353" width="30" height="30"/>
-                                <state key="normal" title="Play"/>
+                                <rect key="frame" x="6" y="259" width="400" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Initialize Playlist"/>
                                 <connections>
                                     <action selector="playMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="njl-bV-W1f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWG-yA-zg8">
-                                <rect key="frame" x="20" y="324" width="374" height="21"/>
+                                <rect key="frame" x="6" y="198" width="400" height="62"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Mt-R10">
-                                <rect key="frame" x="197" y="296" width="20" height="20"/>
+                                <rect key="frame" x="197" y="154" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-8B-MYJ">
-                                <rect key="frame" x="184" y="391" width="46" height="30"/>
+                                <rect key="frame" x="185" y="303" width="46" height="30"/>
                                 <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KY5-CB-juw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usa-3H-V1i">
+                                <rect key="frame" x="154" y="346" width="106" height="30"/>
+                                <state key="normal" title="Resume"/>
+                                <connections>
+                                    <action selector="resumeMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hML-Kw-Dkr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -105,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="234"/>
+            <point key="canvasLocation" x="483" y="212"/>
         </scene>
     </scenes>
 </document>
