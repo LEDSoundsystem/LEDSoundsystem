@@ -27,6 +27,7 @@
 			<string>com.ledsoundsystem.spotify-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>spotify-action</string>
 				<string>ledsoundsystem-login</string>
 			</array>
 		</dict>

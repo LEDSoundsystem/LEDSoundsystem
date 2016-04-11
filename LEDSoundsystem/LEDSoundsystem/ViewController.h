@@ -12,9 +12,10 @@
 #import "Global.h"
 
 
-@interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
-
-
+@interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate, NSURLConnectionDelegate>
+{
+    NSMutableData *_responseData;
+};
 
 @end
 

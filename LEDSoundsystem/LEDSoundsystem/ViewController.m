@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *songTitle;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
+
 @end
 
 @implementation ViewController
@@ -75,7 +76,6 @@
         }
         
         
-        
         NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:cariboutheband:playlist:4Dg0J0ICj9kKTGDyFu0Cv4"] accessToken:auth.session.accessToken error:nil];
         
         [[SPTRequest sharedHandler] performRequest:playlistReq callback:^(NSError *error, NSURLResponse *response, NSData *data) {
@@ -83,34 +83,80 @@
                 NSLog(@"playlist request generated error: %@", error);
                 return;
             }
+            
+            NSLog(@"Playlist request success");
             SPTPlaylistSnapshot *playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
             
             [self.player playURIs:playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
             
             SPTPartialTrack *track = playlistSnapshot.firstTrackPage.items[0];
-            NSString *requestURL = [NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", track.identifier];
             
-            NSString *authorizationString = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
-            NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-            [params setValue:authorizationString forKey:@"Authorization"];
+            NSString *authToken = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
             
-            [[Global networkManager] GET:requestURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSLog(@"GET request for song info succeeded. Track info for %@: %@", track.name, responseObject);
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                NSLog(@"failed to get track info. error: %@", error);
-            }];
+            /* Create request variable containing our immutable request
+             * This could also be a paramter of your method */
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", track.identifier]]];
             
-            NSLog(@"[viewController handleNewSession] track.identifier = %@", track.identifier);
+            // Create a mutable copy of the immutable request and add more headers
+            NSMutableURLRequest *mutableRequest = [request mutableCopy];
+            [mutableRequest addValue:authToken forHTTPHeaderField:@"Authorization"];
             
+            // Now set our request variable with an (immutable) copy of the altered request
+            request = [mutableRequest copy];
             
+            // Log the output to make sure our new headers are there    
+            NSLog(@"%@", request.allHTTPHeaderFields);
+            
+            NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            if(!theConnection){
+                NSLog(@"Fucked, didn't work");
+            }
+            else {
+                NSLog(@"Not fucked, it worked");
+            }
             
             [self updateUI];
         }];
-        
     }];
+}
+
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    // A response has been received, this is where we initialize the instance var you created
+    // so that we can append data to it in the didReceiveData method
+    // Furthermore, this method is called each time there is a redirect so reinitializing it
+    // also serves to clear it
+    _responseData = [[NSMutableData alloc] init];
+    NSLog(@"NSURL: Did Receive Response");
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // Append the new data to the instance variable you declared
+    [_responseData appendData:data];
+    NSLog(@"NSURL: Did Receive Data");
+
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
+    // Return nil to indicate not necessary to store a cached response for this connection
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // The request is complete and data has been received
+    // You can parse the stuff in your instance variable now
+    NSLog(@"%@",_responseData);
+    NSString *someString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
+    NSLog(@"%@",someString);
     
-    
-    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // The request has failed for some reason!
+    // Check the error var
 }
 
 - (IBAction)playMusic:(id)sender {

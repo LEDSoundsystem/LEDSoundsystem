@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FEECF331CBB4A6600CFC6A0 /* NSURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEECF321CBB4A6600CFC6A0 /* NSURLViewController.m */; };
 		800902FC1C88C9F400722614 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FB1C88C9F400722614 /* main.m */; };
 		800902FF1C88C9F400722614 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FE1C88C9F400722614 /* AppDelegate.m */; };
 		800903021C88C9F400722614 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800903011C88C9F400722614 /* ViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7FEECF311CBB49E200CFC6A0 /* NSURLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLViewController.h; sourceTree = "<group>"; };
+		7FEECF321CBB4A6600CFC6A0 /* NSURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLViewController.m; sourceTree = "<group>"; };
 		800902F71C88C9F400722614 /* LEDSoundsystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDSoundsystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		800902FB1C88C9F400722614 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		800902FD1C88C9F400722614 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				80FA5F9E1CB31A71008F51F7 /* startViewController.m */,
 				800902FD1C88C9F400722614 /* AppDelegate.h */,
 				800902FE1C88C9F400722614 /* AppDelegate.m */,
+				7FEECF311CBB49E200CFC6A0 /* NSURLViewController.h */,
+				7FEECF321CBB4A6600CFC6A0 /* NSURLViewController.m */,
 				800903001C88C9F400722614 /* ViewController.h */,
 				800903011C88C9F400722614 /* ViewController.m */,
 				80D602451CAB7DD3003305E3 /* playlistTableViewController.h */,
@@ -280,6 +285,7 @@
 				TargetAttributes = {
 					800902F61C88C9F400722614 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2X9UL2VMJ3;
 					};
 					8009030F1C88C9F500722614 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -395,6 +401,7 @@
 				800903021C88C9F400722614 /* ViewController.m in Sources */,
 				800902FF1C88C9F400722614 /* AppDelegate.m in Sources */,
 				800902FC1C88C9F400722614 /* main.m in Sources */,
+				7FEECF331CBB4A6600CFC6A0 /* NSURLViewController.m in Sources */,
 				80A910141CB7530E00754D3E /* Global.m in Sources */,
 				80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */,
 				80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */,
@@ -540,6 +547,8 @@
 			baseConfigurationReference = EC89E8BA84AA3C6E3E65C4B9 /* Pods-LEDSoundsystem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LEDSoundsystem",
@@ -548,6 +557,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -557,6 +567,8 @@
 			baseConfigurationReference = 9C08FAF56B2338B849D6E498 /* Pods-LEDSoundsystem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LEDSoundsystem",
@@ -565,6 +577,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
