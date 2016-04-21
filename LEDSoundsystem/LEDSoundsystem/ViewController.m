@@ -12,6 +12,7 @@
 #import <Spotify/SPTDiskCache.h>
 #import "AFHTTPSessionManager.h"
 
+@import HealthKit;
 
 
 @interface ViewController () <SPTAudioStreamingDelegate>
@@ -122,6 +123,19 @@
             }
             else {
                 NSLog(@"Not fucked, it worked: %@", _responseData);
+                NSMutableArray *samples = [NSMutableArray array];
+                HKQuantityType *heartRateType =
+                [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+                
+                HKQuantity *heartRateForInterval =
+                [HKQuantity quantityWithUnit:[HKUnit unitFromString:@"count/min"]
+                                 doubleValue:95.0];
+                
+                
+                //need to figure out when to stop and start the heart rate sampling
+                /*HKQuantitySample *heartRateForIntervalSample = [HKQuantitySample quantitySampleWithType:heartRateType quantity:heartRateForInterval startDate:<#(nonnull NSDate *)#> endDate:<#(nonnull NSDate *)#>]*/
+                
+                //[samples addObject:heartRateForIntervalSample];
             }
             
             [self updateUI];
