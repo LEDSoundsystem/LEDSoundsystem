@@ -14,8 +14,13 @@
 
 @interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate, NSURLConnectionDelegate>
 {
-    NSMutableData *_responseData;
+    
 };
+@property (strong, nonatomic) SPTPartialTrack *song;
+@property (strong, nonatomic) NSMutableData *responseData;
+//not sure we need this anymore
+@property (strong, nonatomic) NSMutableArray *samples;
+-(void)collectHeartRate;
 
 @end
 

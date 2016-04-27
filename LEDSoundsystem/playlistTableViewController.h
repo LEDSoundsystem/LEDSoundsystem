@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Spotify/Spotify.h>
 
-@interface playlistTableViewController : UITableViewController <SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
+@interface playlistTableViewController : UITableViewController <SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate, NSURLConnectionDelegate>
 
-@property (strong, nonatomic) SPTPlaylistList *playlists;
+@property (strong, nonatomic) SPTPlaylistSnapshot *playlists;
 
 @end

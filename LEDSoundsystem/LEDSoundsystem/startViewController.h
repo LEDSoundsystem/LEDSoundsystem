@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Spotify/Spotify.h>
+#import "startViewController.h"
 
 @interface startViewController : UIViewController <SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
+
+@property (strong, nonatomic) SPTPlaylistSnapshot* playlistSnapshot;
+
+- (IBAction)startClicked:(id)sender;
 
 @end
