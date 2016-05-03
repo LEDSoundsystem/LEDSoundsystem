@@ -8,12 +8,20 @@
 #import <Spotify/Spotify.h>
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "startViewController.h"
+#import "playlistTableViewController.h"
 #import "Config.h"
 
-@interface AppDelegate ()
+@import WatchConnectivity;
+@import HealthKit;
+
+@interface AppDelegate () <WCSessionDelegate>
 
 @property (nonatomic, strong) SPTSession *session;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
+
+@property (nonatomic, strong) HKHealthStore *healthStore;
+@property (nonatomic, strong) NSMutableArray *heartData;
 
 @end
 
@@ -37,6 +45,14 @@
     [application performSelector:@selector(openURL:)
                       withObject:loginURL];
     //End Spotify Authorization Logic
+    
+    //WC SESSION STUFF
+    if ([WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
     
     return YES;
 }
@@ -116,6 +132,66 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+// authorization from watch
+- (void) applicationShouldRequestHealthAuthorization:(UIApplication *)application {
+    
+    [self.healthStore handleAuthorizationForExtensionWithCompletion:^(BOOL success, NSError * error) {
+        if(!success) {
+            NSLog(@"error: %@", error);
+        }
+    }];
+}
+
+#pragma mark - WCSession Delegate
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary*)message {
+    AppDelegate *tmpDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    ViewController *vc = (ViewController *)(tmpDelegate.window.rootViewController).topViewController;
+    UIViewController *vc = (tmpDelegate.window.rootViewController);
+    NSLog(@"vc: %@", [vc class]);
+    if([vc isKindOfClass:[ViewController class]]){
+        NSString *HR = [message objectForKey:@"heartRate"];
+        if (!self.heartData) {
+            self.heartData = [[NSMutableArray alloc] init];
+        }
+        
+        [self.heartData addObject:HR];
+        
+        //Add the new counter value and reload the table view
+//        AppDelegate *tmpDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//        ViewController *vc = (ViewController *)((UINavigationController*)tmpDelegate.window.rootViewController).visibleViewController;
+        
+        NSLog(@"[AppDelegate didReceiveMessage] view controller: %@", vc);
+        NSLog(@"[AppDelegate didReceiveMessage] message: %@", message);
+        
+        //[vc.heartLabel setText:HR];
+    }
+}
+
+#pragma mark - Standard WatchKit Delegate
+
+-(void)sessionWatchStateDidChange:(nonnull WCSession *)session
+{
+    if(WCSession.isSupported){
+        WCSession* session = WCSession.defaultSession;
+        session.delegate = self;
+        [session activateSession];
+        
+        if(session.reachable){
+            NSLog(@"session.reachable");
+        }
+        
+        if(session.paired){
+            if(session.isWatchAppInstalled){
+                
+                if(session.watchDirectoryURL != nil){
+                    
+                }
+            }
+        }
+    }
 }
 
 

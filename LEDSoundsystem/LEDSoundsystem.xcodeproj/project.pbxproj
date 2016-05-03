@@ -14,7 +14,14 @@
 		8009030A1C88C9F500722614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800903081C88C9F500722614 /* LaunchScreen.storyboard */; };
 		800903151C88C9F500722614 /* LEDSoundsystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 800903141C88C9F500722614 /* LEDSoundsystemTests.m */; };
 		800903201C88C9F500722614 /* LEDSoundsystemUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8009031F1C88C9F500722614 /* LEDSoundsystemUITests.m */; };
-		801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA41C8A316B00536847 /* Spotify.framework */; };
+		801560AD1CD2FB35002691B9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801560AB1CD2FB35002691B9 /* Interface.storyboard */; };
+		801560AF1CD2FB35002691B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801560AE1CD2FB35002691B9 /* Assets.xcassets */; };
+		801560B61CD2FB35002691B9 /* LEDSoundWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 801560B51CD2FB35002691B9 /* LEDSoundWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		801560BE1CD2FB35002691B9 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801560BD1CD2FB35002691B9 /* InterfaceController.m */; };
+		801560C11CD2FB35002691B9 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 801560C01CD2FB35002691B9 /* ExtensionDelegate.m */; };
+		801560C41CD2FB35002691B9 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801560C31CD2FB35002691B9 /* NotificationController.m */; };
+		801560C61CD2FB35002691B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801560C51CD2FB35002691B9 /* Assets.xcassets */; };
+		801560CA1CD2FB35002691B9 /* LEDSoundWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 801560A91CD2FB35002691B9 /* LEDSoundWatch.app */; };
 		801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA61C8A331F00536847 /* AVFoundation.framework */; };
 		801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA81C8A332D00536847 /* SystemConfiguration.framework */; };
 		807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 807C64F01C89FF6B00E116AD /* LogoClear.png */; };
@@ -24,6 +31,9 @@
 		80D72E181CD0728300471B7D /* playlistTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D72E171CD0728300471B7D /* playlistTableCellTableViewCell.m */; };
 		80D72E1A1CD083DF00471B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D72E191CD083DF00471B7D /* Main.storyboard */; };
 		80E4AF5B1CC85B9A00F49581 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E4AF5A1CC85B9A00F49581 /* HealthKit.framework */; };
+		80EFAF811CD839FD0039A1AE /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EFAF801CD839FD0039A1AE /* Spotify.framework */; };
+		80EFAF891CD867E00039A1AE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EFAF881CD867E00039A1AE /* HealthKit.framework */; };
+		80EFAF8B1CD882900039A1AE /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EFAF8A1CD882900039A1AE /* Song.storyboard */; };
 		80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FA5F9E1CB31A71008F51F7 /* startViewController.m */; };
 		A01D8A81F13D8D9DDE6221EB /* libPods-LEDSoundsystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2563902D92A43A962E57D18 /* libPods-LEDSoundsystem.a */; };
 /* End PBXBuildFile section */
@@ -43,7 +53,46 @@
 			remoteGlobalIDString = 800902F61C88C9F400722614;
 			remoteInfo = LEDSoundsystem;
 		};
+		801560B71CD2FB35002691B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 800902EF1C88C9F400722614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 801560B41CD2FB35002691B9;
+			remoteInfo = "LEDSoundWatch Extension";
+		};
+		801560C81CD2FB35002691B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 800902EF1C88C9F400722614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 801560A81CD2FB35002691B9;
+			remoteInfo = LEDSoundWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		801560D01CD2FB35002691B9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				801560B61CD2FB35002691B9 /* LEDSoundWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801560D21CD2FB35002691B9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				801560CA1CD2FB35002691B9 /* LEDSoundWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		800902F71C88C9F400722614 /* LEDSoundsystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDSoundsystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +110,20 @@
 		8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDSoundsystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8009031F1C88C9F500722614 /* LEDSoundsystemUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEDSoundsystemUITests.m; sourceTree = "<group>"; };
 		800903211C88C9F500722614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		801E5FA41C8A316B00536847 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		801560A91CD2FB35002691B9 /* LEDSoundWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDSoundWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		801560AC1CD2FB35002691B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		801560AE1CD2FB35002691B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		801560B01CD2FB35002691B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		801560B51CD2FB35002691B9 /* LEDSoundWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LEDSoundWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		801560BB1CD2FB35002691B9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		801560BC1CD2FB35002691B9 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		801560BD1CD2FB35002691B9 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		801560BF1CD2FB35002691B9 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		801560C01CD2FB35002691B9 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		801560C21CD2FB35002691B9 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		801560C31CD2FB35002691B9 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		801560C51CD2FB35002691B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		801560C71CD2FB35002691B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		801E5FA61C8A331F00536847 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		801E5FA81C8A332D00536847 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		807C64F01C89FF6B00E116AD /* LogoClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoClear.png; sourceTree = "<group>"; };
@@ -77,6 +139,12 @@
 		80E4AF5A1CC85B9A00F49581 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		80E4AF5C1CC85B9A00F49581 /* LEDSoundsystem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LEDSoundsystem.entitlements; sourceTree = "<group>"; };
 		80EC5D751CA1E6A50095A0D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		80EFAF801CD839FD0039A1AE /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		80EFAF831CD83AA40039A1AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		80EFAF851CD83AB10039A1AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		80EFAF871CD867E00039A1AE /* LEDSoundWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LEDSoundWatch Extension.entitlements"; sourceTree = "<group>"; };
+		80EFAF881CD867E00039A1AE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		80EFAF8A1CD882900039A1AE /* Song.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		80FA5F9D1CB31A71008F51F7 /* startViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startViewController.h; sourceTree = "<group>"; };
 		80FA5F9E1CB31A71008F51F7 /* startViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startViewController.m; sourceTree = "<group>"; };
 		9C08FAF56B2338B849D6E498 /* Pods-LEDSoundsystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDSoundsystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDSoundsystem/Pods-LEDSoundsystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01D8A81F13D8D9DDE6221EB /* libPods-LEDSoundsystem.a in Frameworks */,
-				801E5FA51C8A316B00536847 /* Spotify.framework in Frameworks */,
+				80EFAF811CD839FD0039A1AE /* Spotify.framework in Frameworks */,
 				801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */,
 				801E5FA71C8A332000536847 /* AVFoundation.framework in Frameworks */,
 				80E4AF5B1CC85B9A00F49581 /* HealthKit.framework in Frameworks */,
@@ -111,6 +179,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		801560B21CD2FB35002691B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80EFAF891CD867E00039A1AE /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -118,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				800902F91C88C9F400722614 /* LEDSoundsystem */,
+				801560AA1CD2FB35002691B9 /* LEDSoundWatch */,
+				801560B91CD2FB35002691B9 /* LEDSoundWatch Extension */,
 				801E5FA31C8A313300536847 /* Frameworks */,
 				800903131C88C9F500722614 /* LEDSoundsystemTests */,
 				8009031E1C88C9F500722614 /* LEDSoundsystemUITests */,
@@ -132,6 +210,8 @@
 				800902F71C88C9F400722614 /* LEDSoundsystem.app */,
 				800903101C88C9F500722614 /* LEDSoundsystemTests.xctest */,
 				8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */,
+				801560A91CD2FB35002691B9 /* LEDSoundWatch.app */,
+				801560B51CD2FB35002691B9 /* LEDSoundWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +231,7 @@
 				80D72E151CD0725200471B7D /* playlistTable */,
 				800903061C88C9F400722614 /* Assets.xcassets */,
 				80D72E191CD083DF00471B7D /* Main.storyboard */,
+				80EFAF8A1CD882900039A1AE /* Song.storyboard */,
 				800903081C88C9F500722614 /* LaunchScreen.storyboard */,
 				800902FA1C88C9F400722614 /* Supporting Files */,
 				80D602421CAA3845003305E3 /* songViewController.h */,
@@ -188,13 +269,51 @@
 			path = LEDSoundsystemUITests;
 			sourceTree = "<group>";
 		};
+		801560AA1CD2FB35002691B9 /* LEDSoundWatch */ = {
+			isa = PBXGroup;
+			children = (
+				801560AB1CD2FB35002691B9 /* Interface.storyboard */,
+				801560AE1CD2FB35002691B9 /* Assets.xcassets */,
+				801560B01CD2FB35002691B9 /* Info.plist */,
+			);
+			path = LEDSoundWatch;
+			sourceTree = "<group>";
+		};
+		801560B91CD2FB35002691B9 /* LEDSoundWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				80EFAF871CD867E00039A1AE /* LEDSoundWatch Extension.entitlements */,
+				801560BC1CD2FB35002691B9 /* InterfaceController.h */,
+				801560BD1CD2FB35002691B9 /* InterfaceController.m */,
+				801560BF1CD2FB35002691B9 /* ExtensionDelegate.h */,
+				801560C01CD2FB35002691B9 /* ExtensionDelegate.m */,
+				801560C21CD2FB35002691B9 /* NotificationController.h */,
+				801560C31CD2FB35002691B9 /* NotificationController.m */,
+				801560C51CD2FB35002691B9 /* Assets.xcassets */,
+				801560C71CD2FB35002691B9 /* Info.plist */,
+				801560BA1CD2FB35002691B9 /* Supporting Files */,
+			);
+			path = "LEDSoundWatch Extension";
+			sourceTree = "<group>";
+		};
+		801560BA1CD2FB35002691B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				801560BB1CD2FB35002691B9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		801E5FA31C8A313300536847 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80EFAF881CD867E00039A1AE /* HealthKit.framework */,
+				80EFAF851CD83AB10039A1AE /* UIKit.framework */,
+				80EFAF831CD83AA40039A1AE /* Foundation.framework */,
+				80EFAF801CD839FD0039A1AE /* Spotify.framework */,
 				80E4AF5A1CC85B9A00F49581 /* HealthKit.framework */,
 				801E5FA81C8A332D00536847 /* SystemConfiguration.framework */,
 				801E5FA61C8A331F00536847 /* AVFoundation.framework */,
-				801E5FA41C8A316B00536847 /* Spotify.framework */,
 				E2563902D92A43A962E57D18 /* libPods-LEDSoundsystem.a */,
 			);
 			name = Frameworks;
@@ -242,10 +361,12 @@
 				800902F51C88C9F400722614 /* Resources */,
 				AD5D373582899252285F0251 /* Embed Pods Frameworks */,
 				361D1AE9175E7997EF058B9E /* Copy Pods Resources */,
+				801560D21CD2FB35002691B9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				801560C91CD2FB35002691B9 /* PBXTargetDependency */,
 			);
 			name = LEDSoundsystem;
 			productName = LEDSoundsystem;
@@ -288,6 +409,40 @@
 			productReference = 8009031B1C88C9F500722614 /* LEDSoundsystemUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		801560A81CD2FB35002691B9 /* LEDSoundWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801560D11CD2FB35002691B9 /* Build configuration list for PBXNativeTarget "LEDSoundWatch" */;
+			buildPhases = (
+				801560A71CD2FB35002691B9 /* Resources */,
+				801560D01CD2FB35002691B9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				801560B81CD2FB35002691B9 /* PBXTargetDependency */,
+			);
+			name = LEDSoundWatch;
+			productName = LEDSoundWatch;
+			productReference = 801560A91CD2FB35002691B9 /* LEDSoundWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		801560B41CD2FB35002691B9 /* LEDSoundWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801560CF1CD2FB35002691B9 /* Build configuration list for PBXNativeTarget "LEDSoundWatch Extension" */;
+			buildPhases = (
+				801560B11CD2FB35002691B9 /* Sources */,
+				801560B21CD2FB35002691B9 /* Frameworks */,
+				801560B31CD2FB35002691B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LEDSoundWatch Extension";
+			productName = "LEDSoundWatch Extension";
+			productReference = 801560B51CD2FB35002691B9 /* LEDSoundWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -314,6 +469,19 @@
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 800902F61C88C9F400722614;
 					};
+					801560A81CD2FB35002691B9 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZCV3S2W724;
+					};
+					801560B41CD2FB35002691B9 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZCV3S2W724;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 800902F21C88C9F400722614 /* Build configuration list for PBXProject "LEDSoundsystem" */;
@@ -332,6 +500,8 @@
 				800902F61C88C9F400722614 /* LEDSoundsystem */,
 				8009030F1C88C9F500722614 /* LEDSoundsystemTests */,
 				8009031A1C88C9F500722614 /* LEDSoundsystemUITests */,
+				801560A81CD2FB35002691B9 /* LEDSoundWatch */,
+				801560B41CD2FB35002691B9 /* LEDSoundWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +514,7 @@
 				807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */,
 				8009030A1C88C9F500722614 /* LaunchScreen.storyboard in Resources */,
 				800903071C88C9F400722614 /* Assets.xcassets in Resources */,
+				80EFAF8B1CD882900039A1AE /* Song.storyboard in Resources */,
 				80D72E1A1CD083DF00471B7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +530,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801560A71CD2FB35002691B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801560AF1CD2FB35002691B9 /* Assets.xcassets in Resources */,
+				801560AD1CD2FB35002691B9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801560B31CD2FB35002691B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801560C61CD2FB35002691B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +632,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		801560B11CD2FB35002691B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801560C11CD2FB35002691B9 /* ExtensionDelegate.m in Sources */,
+				801560BE1CD2FB35002691B9 /* InterfaceController.m in Sources */,
+				801560C41CD2FB35002691B9 /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -457,6 +655,16 @@
 			target = 800902F61C88C9F400722614 /* LEDSoundsystem */;
 			targetProxy = 8009031C1C88C9F500722614 /* PBXContainerItemProxy */;
 		};
+		801560B81CD2FB35002691B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 801560B41CD2FB35002691B9 /* LEDSoundWatch Extension */;
+			targetProxy = 801560B71CD2FB35002691B9 /* PBXContainerItemProxy */;
+		};
+		801560C91CD2FB35002691B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 801560A81CD2FB35002691B9 /* LEDSoundWatch */;
+			targetProxy = 801560C81CD2FB35002691B9 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -466,6 +674,14 @@
 				800903091C88C9F500722614 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		801560AB1CD2FB35002691B9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				801560AC1CD2FB35002691B9 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -566,6 +782,7 @@
 					"$(PROJECT_DIR)/LEDSoundsystem",
 				);
 				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +804,7 @@
 					"$(PROJECT_DIR)/LEDSoundsystem",
 				);
 				INFOPLIST_FILE = LEDSoundsystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -643,6 +861,88 @@
 			};
 			name = Release;
 		};
+		801560CB1CD2FB35002691B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = LEDSoundWatch_Extension;
+				INFOPLIST_FILE = LEDSoundWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		801560CC1CD2FB35002691B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = LEDSoundWatch_Extension;
+				INFOPLIST_FILE = LEDSoundWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		801560CD1CD2FB35002691B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_ENTITLEMENTS = "LEDSoundWatch Extension/LEDSoundWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LEDSoundsystem",
+				);
+				INFOPLIST_FILE = "LEDSoundWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		801560CE1CD2FB35002691B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_ENTITLEMENTS = "LEDSoundWatch Extension/LEDSoundWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LEDSoundsystem",
+				);
+				INFOPLIST_FILE = "LEDSoundWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colejurden.ledsoundsystem.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,6 +978,24 @@
 			buildConfigurations = (
 				8009032B1C88C9F500722614 /* Debug */,
 				8009032C1C88C9F500722614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		801560CF1CD2FB35002691B9 /* Build configuration list for PBXNativeTarget "LEDSoundWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801560CD1CD2FB35002691B9 /* Debug */,
+				801560CE1CD2FB35002691B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		801560D11CD2FB35002691B9 /* Build configuration list for PBXNativeTarget "LEDSoundWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801560CB1CD2FB35002691B9 /* Debug */,
+				801560CC1CD2FB35002691B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LEDSoundWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>LEDSoundWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>LEDSoundsystem.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>8009031A1C88C9F500722614</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>801560A81CD2FB35002691B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

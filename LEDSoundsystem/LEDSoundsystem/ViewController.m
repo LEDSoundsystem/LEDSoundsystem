@@ -13,17 +13,11 @@
 #import "AFHTTPSessionManager.h"
 
 @import HealthKit;
+@import WatchConnectivity;
 
-
-@interface ViewController () <SPTAudioStreamingDelegate> {
-    HKHealthStore *healthStore;
+@interface ViewController () <SPTAudioStreamingDelegate, NSURLSessionDelegate, WCSessionDelegate> {
+      
 }
-
-@property (strong, nonatomic) SPTAudioStreamingController *player;
-@property (weak, nonatomic) IBOutlet UILabel *songTitle;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
-
 @end
 
 @implementation ViewController
@@ -35,52 +29,8 @@
     //GET SONG INFORMATION AND STORE IT...once you play....
     
 #warning need to set the duration equal to the song data being passed's duration.
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    //MIGHT WANT TO PUT THIS IN PLAY BUTTON PRESSED...
-    if(NSClassFromString(@"HKHealthStore") && [HKHealthStore isHealthDataAvailable])
-    {
-        healthStore = [[HKHealthStore alloc] init];
-        
-        //define quantity types to read
-        NSSet *readObjectTypes = [NSSet setWithObjects:
-                                  [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate]
-                                  , nil];
-        
-        
-        [healthStore requestAuthorizationToShareTypes:nil readTypes:readObjectTypes completion:^(BOOL success, NSError *error) {
-            if(success == YES) {
-                [self queryHeartRate];
-            } else {
-                //need to determine if error or user canceled...
-                NSLog(@"error authorizing heart rate: %@", error);
-            }
-        }];
-    }
 }
 
-# warning THIS ONLY GETS DATA FROM HEALTHKIT...WE NEED TO USE A "WORKOUT" TO GET DATA FROM APPLE WATCH...
--(void)queryHeartRate {
-    HKQuantityType *type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-    NSDate *now = [NSDate date];
-#warning eventually make then the time after the current time + the duration
-    NSDate *then = [NSDate dateWithTimeIntervalSinceNow:1200];
-    NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:now endDate:then options:HKQueryOptionStrictStartDate];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:HKSampleSortIdentifierStartDate ascending:YES];
-    HKQuery *sampleQuery = [[HKSampleQuery alloc] initWithSampleType:type predicate:predicate limit:HKObjectQueryNoLimit sortDescriptors:@[sortDescriptor] resultsHandler:^(HKSampleQuery *query, NSArray *results, NSError *error) {
-        if(!error && results) {
-            for(HKQuantitySample *samples in results) {
-#warning implement appending of code to nsmutable array....we could POST straight from here too
-                NSLog(@"[Viewcontroller queryheartrate] sample: %@", samples);
-            }
-        }
-        else{
-            NSLog(@"[queryHeartRate] error in sampling: %@", error);
-        }
-    }];
-    
-    [healthStore executeQuery:sampleQuery];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -115,6 +65,35 @@
     
 }
 
+-(void)postSongData:(NSDictionary *)data {
+    //play is pressed...send the song data...
+    //set up url
+    NSURL *url = [NSURL URLWithString:@"http://192.168.15.243:3000/songs"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    
+    __autoreleasing NSError* error = nil;
+    id result = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:&error];
+    
+    NSDictionary *trackMetaData = [self.player currentTrackMetadata];
+    NSString *name = [trackMetaData objectForKey:SPTAudioStreamingMetadataTrackName];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:result, @"song", name, @"name",  nil];
+    NSData *songData = [NSJSONSerialization dataWithJSONObject:params options:kNilOptions error:&error];
+    [request setHTTPBody:songData];
+    
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error) {
+            NSLog(@"error posting song data: %@", error);
+        }
+    }];
+    
+    [postDataTask resume];
+}
+
 -(void)handleNewSession {
     
     //create default auth instance
@@ -138,17 +117,6 @@
         //[self updateUI];
     }];
 }
-//
-//  THIS CAN BE USED OT SAVE HEART RATE TO HEALTHKIT
-//
-//-(void)getHeartRate:(double)height{
-//    NSDate *now = [NSDate date];
-//    HKQuantityType *type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-//    HKUnit *heartRateUnit = [HKUnit unitFromString:@"count/min"];
-//    HKQuantity *quantity = [HKQuantity quantityWithUnit:heartRateUnit doubleValue:height];
-//    HKQuantitySample *heartRateSample = [HKQuantitySample quantitySampleWithType:type quantity:quantity startDate:now endDate:now];
-//    
-//}
 
 #pragma mark NSURLConnection Delegate Methods
 
@@ -158,7 +126,7 @@
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
     _responseData = [[NSMutableData alloc] init];
-    NSLog(@"NSURL: Did Receive Response");
+    NSLog(@"NSURL: Did Receive Response: %@", _responseData);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -214,28 +182,6 @@
         [self.player setIsPlaying:YES callback:^(NSError *error) {
             NSLog(@"Unable to resume song. error: %@",error);
         }];
-    }
-}
-
--(void)collectHeartRate {
-    while([self.player isPlaying])
-    {
-        NSDate *now = [NSDate date];
-        NSDate *then= [NSDate dateWithTimeInterval:1200 sinceDate:now];
-        
-        HKQuantityType *heartRateType =
-        [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
-        
-        HKQuantity *heartRateForInterval =
-        [HKQuantity quantityWithUnit:[HKUnit unitFromString:@"count/min"]
-                         doubleValue:95.0];
-        
-        
-        //need to figure out when to stop and start the heart rate sampling
-        HKQuantitySample *heartRateForIntervalSample = [HKQuantitySample quantitySampleWithType:heartRateType quantity:heartRateForInterval startDate:now endDate:then];
-        
-        [_samples addObject:heartRateForIntervalSample];
-        NSLog(@"sample %lu: %@", (unsigned long)_samples.count, heartRateForIntervalSample);
     }
 }
 

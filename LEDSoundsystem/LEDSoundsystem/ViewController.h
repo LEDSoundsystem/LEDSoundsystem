@@ -11,16 +11,20 @@
 #import "AFHTTPSessionManager.h"
 #import "Global.h"
 
+@import HealthKit;
 
 @interface ViewController : UIViewController<SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate, NSURLConnectionDelegate>
-{
-    
-};
+
 @property (strong, nonatomic) SPTPartialTrack *song;
 @property (strong, nonatomic) NSMutableData *responseData;
 //not sure we need this anymore
 @property (strong, nonatomic) NSMutableArray *samples;
--(void)collectHeartRate;
+@property (strong, nonatomic) HKHealthStore *healthStore;
+@property (strong, nonatomic) SPTAudioStreamingController *player;
+@property (weak, nonatomic) IBOutlet UILabel *songTitle;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UILabel *heartLabel;
+
 
 @end
 
