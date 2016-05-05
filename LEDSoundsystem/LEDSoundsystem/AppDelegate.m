@@ -147,10 +147,13 @@
 #pragma mark - WCSession Delegate
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary*)message {
+    
     AppDelegate *tmpDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
 //    ViewController *vc = (ViewController *)(tmpDelegate.window.rootViewController).topViewController;
+    
     UIViewController *vc = (tmpDelegate.window.rootViewController);
-        NSString *HR = [message objectForKey:@"heartRate"];
+        NSString *HR = [message objectForKey:@"heart_rate"];
         if (!self.heartData) {
             self.heartData = [[NSMutableArray alloc] init];
         }
@@ -191,8 +194,33 @@
     }
 }
 
-- (void)postDataToServer:(NSDictionary *)data {
+- (void)postHeartrate:(NSDictionary *)data {
     
+    //set up URL
+    NSURL *url = [NSURL URLWithString:@"http://10.90.6.211:3000/songs/0"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    
+    //define Headers
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    //define the error and response objects for the POST call
+    __autoreleasing NSError* error = nil;
+    NSURLResponse* response = [[NSURLResponse alloc] init];
+    
+    NSError *err;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&err];
+    
+    [request setHTTPBody: jsonData];
+    
+    NSLog(@"[App Delegate] Heartrate Post JSON: %@", data);
+    
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSLog(@"HERE IS THE ERROR (IF ANY): %@",error);
+    NSLog(@"HERE IS THE RESPONSE (IF ANY): %@",response);
+    
+    
+    NSLog(@"[App Delegate postHeartrate] Made to end of method.");
 }
 
 
