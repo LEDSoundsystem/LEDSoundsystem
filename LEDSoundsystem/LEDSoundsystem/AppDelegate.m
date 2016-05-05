@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) HKHealthStore *healthStore;
 @property (nonatomic, strong) NSMutableArray *heartData;
-
+@property (nonatomic, strong) NSDictionary *songData;
 @end
 
 @implementation AppDelegate
@@ -150,8 +150,6 @@
     AppDelegate *tmpDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    ViewController *vc = (ViewController *)(tmpDelegate.window.rootViewController).topViewController;
     UIViewController *vc = (tmpDelegate.window.rootViewController);
-    NSLog(@"vc: %@", [vc class]);
-    if([vc isKindOfClass:[ViewController class]]){
         NSString *HR = [message objectForKey:@"heartRate"];
         if (!self.heartData) {
             self.heartData = [[NSMutableArray alloc] init];
@@ -167,7 +165,6 @@
         NSLog(@"[AppDelegate didReceiveMessage] message: %@", message);
         
         //[vc.heartLabel setText:HR];
-    }
 }
 
 #pragma mark - Standard WatchKit Delegate
@@ -192,6 +189,10 @@
             }
         }
     }
+}
+
+- (void)postDataToServer:(NSDictionary *)data {
+    
 }
 
 

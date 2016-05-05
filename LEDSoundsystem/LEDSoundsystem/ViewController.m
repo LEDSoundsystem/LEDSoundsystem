@@ -11,12 +11,14 @@
 #import <Spotify/Spotify.h>
 #import <Spotify/SPTDiskCache.h>
 #import "AFHTTPSessionManager.h"
+#import "AppDelegate.h"
 
 @import HealthKit;
 @import WatchConnectivity;
 
 @interface ViewController () <SPTAudioStreamingDelegate, NSURLSessionDelegate, WCSessionDelegate> {
-      
+    AppDelegate *pointer;
+    int songId;
 }
 @end
 
@@ -27,7 +29,7 @@
     self.songTitle.text = @"Nothing Playing";
     
     //GET SONG INFORMATION AND STORE IT...once you play....
-    
+    pointer = [[UIApplication sharedApplication] delegate];
 #warning need to set the duration equal to the song data being passed's duration.
 }
 
@@ -63,42 +65,80 @@
         
     }];
     
+    
+    
 }
 
--(void)postSongData:(NSDictionary *)data {
+-(void)postSongData{
     //play is pressed...send the song data...
     //set up url
-    NSURL *url = [NSURL URLWithString:@"http://192.168.15.243:3000/songs"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    NSURL *url = [NSURL URLWithString:@"http://10.90.6.211:3000/songs"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+
+    //NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
     [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
     __autoreleasing NSError* error = nil;
+    
     id result = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:&error];
+    [request setHTTPBody: _responseData];
     
-    NSDictionary *trackMetaData = [self.player currentTrackMetadata];
-    NSString *name = [trackMetaData objectForKey:SPTAudioStreamingMetadataTrackName];
+    NSLog(@"[ViewController postSongData] result: %@", result);
     
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:result, @"song", name, @"name",  nil];
-    NSData *songData = [NSJSONSerialization dataWithJSONObject:params options:kNilOptions error:&error];
-    [request setHTTPBody:songData];
+    NSURLResponse* response = [[NSURLResponse alloc] init];
     
-    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if(error) {
-            NSLog(@"error posting song data: %@", error);
-        }
-    }];
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSLog(@"%@",error);
+    NSLog(@"%@",response);
+
     
-    [postDataTask resume];
+//    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        if(error) {
+//            NSLog(@"error posting song data: %@", error);
+//        }
+////        [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+////        songId = response;
+//    
+//    }];
+    
+    NSLog(@"[ViewController postSongData] got to resume.");
+    //[postDataTask resume];
 }
 
 -(void)handleNewSession {
     
-    //create default auth instance
     SPTAuth *auth = [SPTAuth defaultInstance];
     
+    NSString *authToken = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
+    
+    /* Create request variable containing our immutable request
+     * This could also be a paramter of your method */
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", _song.identifier]]];
+    
+    // Create a mutable copy of the immutable request and add more headers
+    NSMutableURLRequest *mutableRequest = [request mutableCopy];
+    [mutableRequest addValue:authToken forHTTPHeaderField:@"Authorization"];
+    
+    // Now set our request variable with an (immutable) copy of the altered request
+    request = [mutableRequest copy];
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if(!theConnection){
+        NSLog(@"Fucked, didn't work");
+    }
+    else {
+        NSLog(@"Not fucked, it worked");
+        NSLog(@"response data: %@", self.responseData);
+    }
+    
+    //create default auth instance
     if(self.player == nil) {
         self.player = [[SPTAudioStreamingController alloc] initWithClientId:auth.clientID];
         self.player.playbackDelegate = self;
@@ -147,8 +187,10 @@
     // You can parse the stuff in your instance variable now
     NSLog(@"%@",_responseData);
     NSString *someString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"%@",someString);
-    
+    NSLog(@"response: %@",someString);
+    _songData = someString;
+    //[AppDelegate getSongData:_songData];
+    [self postSongData];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

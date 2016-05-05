@@ -134,28 +134,28 @@ SPTPlaylistSnapshot *playlist;
         SPTPartialTrack *selectedTrack = (SPTPartialTrack *)[_playlists.firstTrackPage.items objectAtIndex:selectedIndex];
         songView.song = selectedTrack;
         
-        NSString *authToken = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
-        
-        /* Create request variable containing our immutable request
-         * This could also be a paramter of your method */
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", selectedTrack.identifier]]];
-        
-        // Create a mutable copy of the immutable request and add more headers
-        NSMutableURLRequest *mutableRequest = [request mutableCopy];
-        [mutableRequest addValue:authToken forHTTPHeaderField:@"Authorization"];
-        
-        // Now set our request variable with an (immutable) copy of the altered request
-        request = [mutableRequest copy];
-        
-        NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        
-        if(!theConnection){
-            NSLog(@"Fucked, didn't work");
-        }
-        else {
-            NSLog(@"Not fucked, it worked");
-            songView.responseData = _responseData;
-        }
+//        NSString *authToken = [NSString stringWithFormat:@"Bearer %@", auth.session.accessToken];
+//        
+//        /* Create request variable containing our immutable request
+//         * This could also be a paramter of your method */
+//        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.spotify.com/v1/audio-features/%@", selectedTrack.identifier]]];
+//        
+//        // Create a mutable copy of the immutable request and add more headers
+//        NSMutableURLRequest *mutableRequest = [request mutableCopy];
+//        [mutableRequest addValue:authToken forHTTPHeaderField:@"Authorization"];
+//        
+//        // Now set our request variable with an (immutable) copy of the altered request
+//        request = [mutableRequest copy];
+//        
+//        NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//        
+//        if(!theConnection){
+//            NSLog(@"Fucked, didn't work");
+//        }
+//        else {
+//            NSLog(@"Not fucked, it worked");
+//            songView.responseData = _responseData;
+//        }
 
     }
 }
