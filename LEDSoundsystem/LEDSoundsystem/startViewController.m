@@ -34,7 +34,7 @@
     SPTAuth *auth = [SPTAuth defaultInstance];
     
     //declare request for playlist
-    NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:cariboutheband:playlist:4Dg0J0ICj9kKTGDyFu0Cv4"] accessToken:auth.session.accessToken error:nil];
+    NSURLRequest *playlistReq = [SPTPlaylistSnapshot createRequestForPlaylistWithURI:[NSURL URLWithString:@"spotify:user:cjurden:playlist:5l0YAoyJvdUDDtPPI6ZbTp"] accessToken:auth.session.accessToken error:nil];
     
     //perform playlist request using SPTRequest
     [[SPTRequest sharedHandler] performRequest:playlistReq callback:^(NSError *error, NSURLResponse *response, NSData *data) {

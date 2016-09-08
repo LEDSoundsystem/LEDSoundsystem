@@ -54,6 +54,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-6q-xGb">
+                                <rect key="frame" x="37" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="J9c-G0-jjO" kind="unwind" unwindAction="unwindToContainerVC:" id="Go1-IB-FXC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -62,9 +69,11 @@
                         <outlet property="heartLabel" destination="mcn-8K-0Yl" id="YhH-gZ-STE"/>
                         <outlet property="songTitle" destination="De2-yM-Cmc" id="UD0-P3-pVX"/>
                         <outlet property="spinner" destination="mcd-VG-hZN" id="y7C-8l-9To"/>
+                        <segue destination="J9c-G0-jjO" kind="unwind" identifier="unwindSegue" unwindAction="unwindToContainerVC:" id="llo-Hc-IG0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbY-lS-Cbc" sceneMemberID="firstResponder"/>
+                <exit id="J9c-G0-jjO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="729" y="260"/>
         </scene>

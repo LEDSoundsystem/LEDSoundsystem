@@ -31,6 +31,17 @@
     //GET SONG INFORMATION AND STORE IT...once you play....
     pointer = [[UIApplication sharedApplication] delegate];
 #warning need to set the duration equal to the song data being passed's duration.
+    _healthStore = [[HKHealthStore alloc]init];
+    HKQueryAnchor *anchor = [HKQueryAnchor anchorFromValue:HKAnchoredObjectQueryNoAnchor];
+    HKQuantityType *quantityType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+    NSSet *dataTypes = [NSSet setWithObjects:quantityType, nil];
+    [_healthStore requestAuthorizationToShareTypes:nil readTypes:dataTypes completion:^(BOOL success, NSError * _Nullable error) {
+        if(success){
+            NSLog(@"[InterfaceController] got permission");
+        } else {
+            NSLog(@"[InterfaceController] error requesting permission: %@", error);
+        }
+    }];
 }
 
 
@@ -73,7 +84,7 @@
     //play is pressed...send the song data...
     //set up url
     
-    NSURL *url = [NSURL URLWithString:@"http://10.90.6.211:3000/songs"];
+    NSURL *url = [NSURL URLWithString:@"http://10.89.87.147:3000/songs"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
 
     //NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -226,5 +237,14 @@
         }];
     }
 }
+
+#pragma mark - Navigation
+- (IBAction)unwindToContainerVC:(UIStoryboardSegue *)segue {
+    
+}
+- (IBAction)unwindNow:(id)sender {
+    [self performSegueWithIdentifier:@"unwindSegue" sender:self];
+}
+
 
 @end

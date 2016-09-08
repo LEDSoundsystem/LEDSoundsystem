@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) SPTPlaylistSnapshot *playlists;
 
+- (IBAction)unwindToContainerVC:(UIStoryboardSegue *)segue;
+
 @end

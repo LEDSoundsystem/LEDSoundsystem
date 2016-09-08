@@ -20,6 +20,7 @@
 @property (nonatomic, strong) SPTSession *session;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
 
+@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) HKHealthStore *healthStore;
 @property (nonatomic, strong) NSMutableArray *heartData;
 @property (nonatomic, strong) NSDictionary *songData;
@@ -153,7 +154,7 @@
 //    ViewController *vc = (ViewController *)(tmpDelegate.window.rootViewController).topViewController;
     
     UIViewController *vc = (tmpDelegate.window.rootViewController);
-        NSString *HR = [message objectForKey:@"heart_rate"];
+        NSString *HR = [message objectForKey:@"heartRate"];
         if (!self.heartData) {
             self.heartData = [[NSMutableArray alloc] init];
         }
@@ -166,7 +167,9 @@
         
         NSLog(@"[AppDelegate didReceiveMessage] view controller: %@", vc);
         NSLog(@"[AppDelegate didReceiveMessage] message: %@", message);
-        
+    NSString * timestamp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    NSDictionary *heartDict = [[NSDictionary alloc] initWithObjectsAndKeys: [message objectForKey:@"heartRate"], @"heart_rate", timestamp, @"time", nil];
+    [self postHeartrate: heartDict];
         //[vc.heartLabel setText:HR];
 }
 
@@ -197,7 +200,7 @@
 - (void)postHeartrate:(NSDictionary *)data {
     
     //set up URL
-    NSURL *url = [NSURL URLWithString:@"http://10.90.6.211:3000/songs/0"];
+    NSURL *url = [NSURL URLWithString:@"http://10.89.87.147:3000/songs/0"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     
     //define Headers

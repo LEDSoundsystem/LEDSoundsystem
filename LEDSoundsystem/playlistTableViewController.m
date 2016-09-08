@@ -122,6 +122,10 @@ SPTPlaylistSnapshot *playlist;
 
 
 #pragma mark - Navigation
+- (IBAction)unwindToContainerVC:(UIStoryboardSegue *)segue {
+    NSLog(@"unwound!");
+}
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
