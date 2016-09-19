@@ -12,6 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
 - (void)postDataToServer:(NSDictionary *)data;
 
 @end
