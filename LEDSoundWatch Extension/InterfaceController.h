@@ -13,14 +13,15 @@
 @import WatchKit;
 
 @interface InterfaceController : WKInterfaceController
+
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceSwitch *toggleSwitch;
 
 - (IBAction)toggleWorkout:(BOOL)value;
--(void)updateHeartRate:(NSArray *)samples;
--(HKQuery *)createHeartRateStreamingQuery:(NSDate *)workoutStartDate;
--(void)startWorkout;
--(void)workoutDidStart:(NSDate *)date;
--(void)workoutDidEnd:(NSDate *)date;
+- (void)updateHeartRate:(NSArray *)samples;
+- (HKQuery *)createHeartRateStreamingQuery:(NSDate *)workoutStartDate;
+- (void)startWorkout;
+- (void)workoutDidStart:(NSDate *)date;
+- (void)workoutDidEnd:(NSDate *)date;
 
 
 @end

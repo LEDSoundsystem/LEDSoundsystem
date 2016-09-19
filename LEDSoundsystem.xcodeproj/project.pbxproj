@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800034CF1D8328D900C04264 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801560BD1CD2FB35002691B9 /* InterfaceController.m */; };
 		800902FC1C88C9F400722614 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FB1C88C9F400722614 /* main.m */; };
 		800902FF1C88C9F400722614 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 800902FE1C88C9F400722614 /* AppDelegate.m */; };
 		800903021C88C9F400722614 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800903011C88C9F400722614 /* ViewController.m */; };
@@ -26,7 +27,6 @@
 		801E5FA91C8A332D00536847 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801E5FA81C8A332D00536847 /* SystemConfiguration.framework */; };
 		807C64F11C89FF6B00E116AD /* LogoClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 807C64F01C89FF6B00E116AD /* LogoClear.png */; };
 		80A910141CB7530E00754D3E /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A910131CB7530E00754D3E /* Global.m */; };
-		80D602441CAA3845003305E3 /* songViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602431CAA3845003305E3 /* songViewController.m */; };
 		80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D602461CAB7DD3003305E3 /* playlistTableViewController.m */; };
 		80D72E181CD0728300471B7D /* playlistTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D72E171CD0728300471B7D /* playlistTableCellTableViewCell.m */; };
 		80D72E1A1CD083DF00471B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D72E191CD083DF00471B7D /* Main.storyboard */; };
@@ -129,8 +129,6 @@
 		807C64F01C89FF6B00E116AD /* LogoClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoClear.png; sourceTree = "<group>"; };
 		80A910121CB7530E00754D3E /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		80A910131CB7530E00754D3E /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
-		80D602421CAA3845003305E3 /* songViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songViewController.h; sourceTree = "<group>"; };
-		80D602431CAA3845003305E3 /* songViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songViewController.m; sourceTree = "<group>"; };
 		80D602451CAB7DD3003305E3 /* playlistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playlistTableViewController.h; path = ../playlistTableViewController.h; sourceTree = "<group>"; };
 		80D602461CAB7DD3003305E3 /* playlistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = playlistTableViewController.m; path = ../playlistTableViewController.m; sourceTree = "<group>"; };
 		80D72E161CD0728300471B7D /* playlistTableCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playlistTableCellTableViewCell.h; sourceTree = "<group>"; };
@@ -234,8 +232,6 @@
 				80EFAF8A1CD882900039A1AE /* Song.storyboard */,
 				800903081C88C9F500722614 /* LaunchScreen.storyboard */,
 				800902FA1C88C9F400722614 /* Supporting Files */,
-				80D602421CAA3845003305E3 /* songViewController.h */,
-				80D602431CAA3845003305E3 /* songViewController.m */,
 				80A910121CB7530E00754D3E /* Global.h */,
 				80A910131CB7530E00754D3E /* Global.m */,
 			);
@@ -610,9 +606,9 @@
 				800902FF1C88C9F400722614 /* AppDelegate.m in Sources */,
 				800902FC1C88C9F400722614 /* main.m in Sources */,
 				80A910141CB7530E00754D3E /* Global.m in Sources */,
+				800034CF1D8328D900C04264 /* InterfaceController.m in Sources */,
 				80FA5F9F1CB31A71008F51F7 /* startViewController.m in Sources */,
 				80D602471CAB7DD3003305E3 /* playlistTableViewController.m in Sources */,
-				80D602441CAA3845003305E3 /* songViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
